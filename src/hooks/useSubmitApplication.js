@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-
+import axiosInstance from '../axios/axiosConfig';
 const useSubmitApplication = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -10,7 +10,7 @@ const useSubmitApplication = () => {
         setIsLoading(true);
         setError(null);
         try {
-            await axios.post('/jobs/apply', formData, {
+            await axiosInstance.post('/jobs/apply', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
