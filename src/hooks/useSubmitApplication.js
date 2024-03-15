@@ -10,7 +10,7 @@ const useSubmitApplication = () => {
         setIsLoading(true);
         setError(null);
         try {
-            await axios.post('https://rbrcareers-seven.vercel.app/jobs/apply', formData, {
+            await axios.post('/jobs/apply', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

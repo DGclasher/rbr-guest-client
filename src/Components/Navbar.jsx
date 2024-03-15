@@ -1,20 +1,14 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
-import { useLogout } from '../hooks/useLogout';
+
 
 const Navbar = () => {
-  const { user } = React.useContext(AuthContext);
-  const { logout } = useLogout();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleToggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleLogout = async () => {
-    await logout();
-  };
 
   return (
     <nav className="flex navbar bg-white shadow-md font-main fixed w-screen top-0 items-center justify-between md:justify-around  h-20 z-20 px-4 py-4">
@@ -49,17 +43,6 @@ const Navbar = () => {
           <li>
             <NavLink to='/contact' className="font-semibold lg:text-xl hover:underline" onClick={() => setIsMenuOpen(false)}>Contact</NavLink>
           </li>
-          {user && (
-            <ul className='space-y-2'>
-              <li>
-              <NavLink to='/admin/dashboard' className="font-semibold lg:text-xl hover:underline" >Dashboard</NavLink>
-            </li>
-            <li>
-              <button onClick={handleLogout} className='bg-rose-500 px-4 py-2 text-white rounded' >Logout</button>
-            </li>
-            
-            </ul>
-          )}
         </ul>
       </div>
       {/* Menu items for lg screens and above */}
@@ -73,17 +56,7 @@ const Navbar = () => {
         <li>
           <NavLink to='/contact' className="font-semibold lg:text-xl hover:underline" onClick={() => setIsMenuOpen(false)}>Contact</NavLink>
         </li>
-        {user && (
-          <ul className='flex items-center gap-6'>
-          
-        <li>
-              <NavLink to='/admin/dashboard' className='font-semibold lg:text-xl hover:underline'>Dashboard</NavLink>
-            </li>
-        <li>
-            <button onClick={handleLogout} className='bg-rose-500 px-4 py-2 text-white rounded' >Logout</button>
-          </li>
-        </ul>
-        )}
+        
       </ul>
     </nav>
   );
