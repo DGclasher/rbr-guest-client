@@ -32,13 +32,15 @@ const Job = () => {
             Apply Now <MdArrowOutward />
           </button>
           </div>
-          <div className='pb-2 pt-4'>
+          <div className='py-2'>
             <h2 className='text-xl font-semibold'>Responsibilities</h2>
-            {
+            <ul className="list-disc pl-6">
+              {
               job.description.responsibilities.split('\n').map((responsibility, index) => (
                 <li key={index} className='font-medium'>{responsibility.trim()}</li>
               ))
             }
+            </ul>
           </div>
           <div className='py-2'>
             <h2 className='text-xl font-semibold'>Requirements</h2>

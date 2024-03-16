@@ -17,7 +17,7 @@ const Contact = () => {
     setError(null);
 
     try {
-        const response = await fetch(`https://rbrcareers-seven.vercel.app/contact/`, {
+        const response = await fetch(`https://api.raudratechnologies.com/contact/`, {
             method: 'POST',
             body: JSON.stringify({
                 email,

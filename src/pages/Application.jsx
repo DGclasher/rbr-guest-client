@@ -101,7 +101,7 @@ const Application = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const phonePattern = /^\d{10}$/;
+        const phonePattern = /^[0-9]{10}$/;
         if (applicantPhone.length !== 10 && !phonePattern.test(applicantPhone)) {
             setPhoneError('Invalid phone number');
             toast.error('Invalid phone number');
