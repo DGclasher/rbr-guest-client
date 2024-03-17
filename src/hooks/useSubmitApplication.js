@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import axios from 'axios';
 import toast from 'react-hot-toast';
 import axiosInstance from '../axios/axiosConfig';
+
 const useSubmitApplication = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -15,7 +15,6 @@ const useSubmitApplication = () => {
                     'Content-Type': 'multipart/form-data'
                 }
             });
-            console.log('Application submitted successfully!');
             toast.success('Application submitted successfully!');
         } catch (error) {
             console.error('Error submitting application:', error);

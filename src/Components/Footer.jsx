@@ -1,7 +1,7 @@
 import React from 'react'
 import { MdEmail } from "react-icons/md";
-import { FaPhoneSquareAlt } from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
+import { CiLocationOn } from 'react-icons/ci';
 
 const Footer = () => {
   return (
@@ -23,6 +23,7 @@ const Footer = () => {
         <div className='flex w-full  flex-col items-start justify-center md:items-center gap-4 '>
             <p className='text-2xl font-semibold '>Contact Us</p>
             <p className='flex gap-4 items-center'><MdEmail className='text-xl'/>support@raudratechnologies.com</p>
+            <p className='flex gap-1 items-start text-center'><CiLocationOn size={20}/>99-A, Plot No:98-A, Sri Ram Nagar, Laxmi Nagar, Kondapur, Telangana 500084</p>
         </div>
       </footer>
   )
