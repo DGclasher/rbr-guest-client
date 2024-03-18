@@ -9,7 +9,7 @@ const teamData = [
     },
     {
         id: 2,
-        name: 'Mudeen Shaik',
+        name: 'Mubeen Shaik',
         role: 'CTO',
         image: '/mudeen.webp',
         desc: 'Drives product development via innovative technological strategies.'
